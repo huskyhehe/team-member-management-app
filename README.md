@@ -1,5 +1,18 @@
 # Team Member Management App
 
+```
+The top-level directory structure is as follows:
+.
+└── /src
+    ├── /components         - reusable components including InfoForm.jsx
+    ├── /views              - pages including List.jsx, Add.jsx, Edit.jsx
+    ├── /context            - members.js, appState.js
+    ├── /styles             - css stylesheet
+    ├── App.jsx
+    └── index.js
+```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
