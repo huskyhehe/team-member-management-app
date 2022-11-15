@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { appState } from "../context/appState";
 import InfoForm from "../components/InfoForm";
-import { members } from "../data/members";
-import { state } from "../data/state";
+import { members } from "../context/members";
 
 function Edit() {
-    const id = state.activeId;
-    const memberData = members.find(member => member.id === id);
-
-    checkSession(); 
     const navigate = useNavigate();
-
-    function checkSession() {
-        if (!state.activeId) {
-            navigate('/route', {state: members})  
-        }
+    const handleCancelClick = () => {
+        navigate('/', {state: members});
     }
 
+    useEffect(() => {
+        if (!appState.activeId){
+            navigate('/', {state: members});
+        }
+    },[navigate])
+
+
     return (
-        <div>
+        <div className="view">
+            <button type="button" onClick={handleCancelClick} className="cancel-btn">x</button>
             <h2>Edit team member</h2>
-            <p>Edit contact info, location and role</p>
-            <InfoForm mode="edit" preloadedValues={memberData}/>
+            <p>Edit contact info and role</p>
+            <InfoForm />
         </div>
     )
 }

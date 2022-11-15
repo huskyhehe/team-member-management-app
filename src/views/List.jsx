@@ -1,27 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { members } from "../data/members";
-import { state } from "../data/state";
+import { useNavigate } from "react-router-dom";
+import { appState } from "../context/appState";
+import { members } from "../context/members";
 
-function List() {
-        
-    function setActiveId(e, memberId) {
-        state.activeId = memberId;
+function List() {  
+    const navigate = useNavigate();
+
+    function handleAddClick() {
+        appState.activeId = null;
+        navigate('/add', {state: members});
+    }
+    function handleNameClick(e, memberId) {
+        appState.activeId = memberId;
+        navigate('/edit', {state: members});    
     }
     
     return (
-        <div className="member-list">
+        <div className="view">
+            <button onClick={handleAddClick} className="add-btn">+</button>
             <h2>Team members</h2>
             <p>You have {members.length} team members.</p>
-            {/* <button >+</button> */}
-            <Link to="/add" className="add-btn">+</Link>
             <ul>
                 {members.map(member => {
                     return (
-                        <li key={member.id}>
-                            <Link to="/edit" onClick={(e) => setActiveId(e, member.id)}>
+                        <li key={member.id} className="member-entry">
+                            <button onClick={(e) => handleNameClick(e, member.id)} className="name-btn">
                                 {member.firstName} {member.lastName} {member.role === "admin" ? "(admin)" : ""}
-                            </Link>
+                            </button>
                             <p>{member.phone}</p>
                             <p>{member.email}</p>
                         </li> 
@@ -33,8 +38,3 @@ function List() {
 }
 
 export default List;
-
-// {/* <p onClick={(e) => handleTargetMember(e, member.id)} memberId={member.id}>
-//     {member.firstName} {member.lastName} {member.role === "admin" ? "(admin)" : ""}
-// </p> */}
-
