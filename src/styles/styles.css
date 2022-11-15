@@ -1,0 +1,17 @@
+.App {
+    display: flex;
+    align-items: center;
+    margin: 3rem auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 20rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: .5rem;
+}
