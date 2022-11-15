@@ -1,7 +1,18 @@
-.App {
-    display: flex;
-    align-items: center;
-    margin: 3rem auto;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: gainsboro;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 0;
 }
 
 form {
@@ -11,7 +22,85 @@ form {
     width: 20rem;
 }
 
-input {
+button, input {
     font-size: 1rem;
     padding: .5rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+p {
+    color: gray;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    width: 20rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+}
+
+.view {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+.cancel-btn, .add-btn, .name-btn {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.cancel-btn, .add-btn {
+    font-size: 3rem;
+    height: 3rem;
+    margin-top: 0;
+    color: slateblue;
+    align-self: flex-end;
+}
+
+
+.name-btn {
+    font-weight: bold;
+}
+
+.name-btn:hover {
+    color:slateblue;
+}
+
+.btn-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    width: min-content;
+    align-self: flex-end;
+}
+
+.delete-btn, .save-btn {
+    margin-top: 2rem;
+    width: 9rem;
+    align-items: flex-end;
+}
+
+.member-entry {
+    width: max-content;
+    border-top: 1px solid lightgray;
+    padding: 1rem 0;
+}
+
+.member-entry p {
+    margin: .25rem 0;
+}
+
+
+.error {
+    font-size: .8rem;
+    color: darkred;
+    margin-top: 0;
+    padding: 0;
 }
