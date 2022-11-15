@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import List from './views/List';
 import Add from './views/Add';
 import Edit from './views/Edit';
-import InfoForm from './components/InfoForm';
 
 import './styles/styles.css';
 
