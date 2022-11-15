@@ -5,7 +5,7 @@ body {
     background: gainsboro;
 }
 
-ul li {
+ul, li {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -88,15 +88,18 @@ p {
 }
 
 .member-entry {
-    width: max-content;
+    width: 18rem;
     border-top: 1px solid lightgray;
-    padding: 1rem 0;
+    padding: 1rem;
 }
 
 .member-entry p {
     margin: .25rem 0;
 }
 
+.member-entry:hover {
+    background: rgb(246, 244, 249);
+}
 
 .error {
     font-size: .8rem;
